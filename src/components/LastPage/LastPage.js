@@ -6,8 +6,7 @@ export default function LastPage({lastPageState}) {
     <>
       <h1 className='done-title'>Готово!</h1>
       <div className='done-text'>Санта получил твой ответ.</div>
-      <div className='done-text'>Если он верный, завтра ты получишь свой подарок.</div>
-      <div className='done-text'>И приходи завтра за новой загадкой.</div>
+      <div className='done-text'>Если он верный, завтра ты получишь свой подарок!</div>
       <img alt='' src={santa} className='d-block mt-5'></img>
     </>
   );

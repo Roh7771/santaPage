@@ -10,7 +10,7 @@ import Warning from './components/Warning/Warning';
 
 function App() {
   const [showQuest, setShowQuest] = useState(false);
-  const [showWarning, setShowWarning] = useState(localStorage.getItem('test-1'));
+  const [showWarning] = useState(localStorage.getItem('test-1'));
   const [answer, setAnswer] = useState('Железо');
   const [showMain, setShowMain] = useState(true);
   const [lastPageState, setLastPageState] = useState({ show: false, isLoadingData: false });
