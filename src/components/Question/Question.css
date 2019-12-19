@@ -1,0 +1,27 @@
+.custom-control-label {
+  font-size: 40px;
+  color: white;
+}
+
+.custom-control-label:before {
+  top: 0.5em
+}
+.custom-control-label:after {
+  top: 0.5em
+}
+
+.question {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.answer-button {
+  font-size: 25px;
+}
+
+.inputs {
+  padding-left: 40px;
+}

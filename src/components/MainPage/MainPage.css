@@ -1,0 +1,16 @@
+.greating {
+  font-size: 100px;
+  color: white;
+  text-align: center;
+}
+
+.text {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.go-button {
+  font-size: 30px;
+  width: 25%;
+}
