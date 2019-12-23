@@ -10,8 +10,8 @@ import Warning from './components/Warning/Warning';
 
 function App() {
   const [showQuest, setShowQuest] = useState(false);
-  const [showWarning] = useState(localStorage.getItem('test-1'));
-  const [answer, setAnswer] = useState('Железо');
+  const [showWarning] = useState(localStorage.getItem('test-2'));
+  const [answer, setAnswer] = useState('Сурьма');
   const [showMain, setShowMain] = useState(true);
   const [lastPageState, setLastPageState] = useState({ show: false, isLoadingData: false });
   const startHandler = () => {
@@ -39,7 +39,7 @@ function App() {
       }
     ).then(
       () => {
-        localStorage.setItem('test-1', true);
+        localStorage.setItem('test-2', true);
         setLastPageState(prevState => {
           return { ...prevState, isLoadingData: false }
         })

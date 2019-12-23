@@ -6,8 +6,7 @@ export default function LastPage({lastPageState}) {
     <>
       <h1 className='done-title'>Готово!</h1>
       <div className='done-text'>Санта получил твой ответ.</div>
-      <div className='done-text'>Если он верный, в понедельник ты получишь свой подарок!</div>
-      <div className='done-text'>Уж извини, в выходные Санта отдыхает :)</div>
+      <div className='done-text'>Если он верный, завтра ты получишь свой подарок!</div>
       <img alt='' src={santa} className='d-block mt-5'></img>
     </>
   );
@@ -22,7 +21,6 @@ export default function LastPage({lastPageState}) {
   )
   return (
     <div className='container d-flex flex-column justify-content-center align-items-center vh-100'>
-
       {lastPageState.isLoadingData ? loading : done}
     </div>
   )
