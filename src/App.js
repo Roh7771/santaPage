@@ -14,7 +14,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   
   const startHandler = () => {
-    history.push('/question');
+    history.push('/santaPage/question');
   }
 
 
@@ -42,7 +42,7 @@ function App() {
     ).catch(error => {
       console.log(error);
     });
-    history.push('/last');
+    history.push('/santaPage/last');
   }
 
   const radioHandler = (e) => {
@@ -51,10 +51,10 @@ function App() {
 
   return (
     <Switch>
-      <Route exact path='/question'>
+      <Route exact path='/santaPage/question'>
         <Question answer={answer} onChange={radioHandler} onAnswer={answerHandler} />
       </Route>
-      <Route exact path='/last'>
+      <Route exact path='/santaPage/last'>
         <LastPage isLoading={isLoading} />
       </Route>
       <MainPage onStart={startHandler} />
