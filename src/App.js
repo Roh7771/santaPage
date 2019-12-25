@@ -7,22 +7,20 @@ import MainPage from './components/MainPage/MainPage'
 import Question from './components/Question/Question';
 import LastPage from './components/LastPage/LastPage';
 import Warning from './components/Warning/Warning';
+import { Route, Redirect, useHistory } from 'react-router-dom';
 
 function App() {
-  const [showQuest, setShowQuest] = useState(false);
-  const [showWarning] = useState(localStorage.getItem('test-3'));
+  let history = useHistory();
   const [answer, setAnswer] = useState('Олово');
-  const [showMain, setShowMain] = useState(true);
-  const [lastPageState, setLastPageState] = useState({ show: false, isLoadingData: false });
+  const [isLoading, setIsLoading] = useState(false);
+  
   const startHandler = () => {
-    setShowQuest(true);
-    setShowMain(false);
+    history.push('/question');
   }
 
 
   const answerHandler = () => {
-    setLastPageState({ show: true, isLoadingData: true });
-    setShowQuest(false);
+    setIsLoading(true);
     fetch('https://santas-server.herokuapp.com/api/v1/answer', {
       body: JSON.stringify({ 
         answer,
@@ -39,14 +37,13 @@ function App() {
       }
     ).then(
       () => {
-        localStorage.setItem('test-3', true);
-        setLastPageState(prevState => {
-          return { ...prevState, isLoadingData: false }
-        })
+        setIsLoading(false);
+        localStorage.setItem('test-4', true);
       }
     ).catch(error => {
       console.log(error);
     });
+    history.push('/last');
   }
 
   const radioHandler = (e) => {
@@ -54,12 +51,19 @@ function App() {
   }
 
   return (
-    
     <>
-      {showWarning ? <Warning /> : null}
-      {showMain && !showWarning ? <MainPage onStart={startHandler} /> : null}
-      {showQuest ? <Question answer={answer} onChange={radioHandler} onAnswer={answerHandler} /> : null}
-      {lastPageState.show ? <LastPage lastPageState={lastPageState} /> : null}
+      <Route path='/'>
+        {localStorage.getItem('test-4') ? <Redirect to="/warning" /> : <Route exact path='/'><MainPage onStart={startHandler} /></Route>}
+      </Route>
+      <Route exact path='/question'>
+        <Question answer={answer} onChange={radioHandler} onAnswer={answerHandler} />
+      </Route>
+      <Route exact path='/last'>
+        <LastPage isLoading={isLoading} />
+      </Route>
+      <Route exact path='/warning'>
+        <Warning />
+      </Route>
     </>
   );
 }

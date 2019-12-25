@@ -1,7 +1,7 @@
 import React from 'react';
 import santa from './../../images/santa.png'
 
-export default function LastPage({lastPageState}) {
+export default function LastPage({isLoading}) {
   const done = (
     <>
       <h1 className='done-title'>Готово!</h1>
@@ -21,7 +21,7 @@ export default function LastPage({lastPageState}) {
   )
   return (
     <div className='container d-flex flex-column justify-content-center align-items-center vh-100'>
-      {lastPageState.isLoadingData ? loading : done}
+      {isLoading ? loading : done}
     </div>
   )
 }
