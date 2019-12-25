@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Warning from './components/Warning/Warning';
 import * as serviceWorker from './serviceWorker';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 const routing = (
   <Router>
     <Route path='/'>
-      <App />
+      {localStorage.getItem('test-4') ? <Redirect to="/warning" /> : <App />}
+    </Route>
+    <Route exact path='/warning'>
+      <Warning />
     </Route>
   </Router>
 )

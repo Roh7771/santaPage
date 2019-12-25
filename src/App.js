@@ -6,8 +6,7 @@ import './App.css';
 import MainPage from './components/MainPage/MainPage'
 import Question from './components/Question/Question';
 import LastPage from './components/LastPage/LastPage';
-import Warning from './components/Warning/Warning';
-import { Route, Redirect, useHistory } from 'react-router-dom';
+import { Route, useHistory, Switch } from 'react-router-dom';
 
 function App() {
   let history = useHistory();
@@ -51,20 +50,15 @@ function App() {
   }
 
   return (
-    <>
-      <Route path='/'>
-        {localStorage.getItem('test-4') ? <Redirect to="/warning" /> : <Route exact path='/'><MainPage onStart={startHandler} /></Route>}
-      </Route>
+    <Switch>
       <Route exact path='/question'>
         <Question answer={answer} onChange={radioHandler} onAnswer={answerHandler} />
       </Route>
       <Route exact path='/last'>
         <LastPage isLoading={isLoading} />
       </Route>
-      <Route exact path='/warning'>
-        <Warning />
-      </Route>
-    </>
+      <MainPage onStart={startHandler} />
+    </Switch>
   );
 }
 
