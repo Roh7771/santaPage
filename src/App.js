@@ -10,11 +10,11 @@ import { Route, useHistory, Switch } from 'react-router-dom';
 
 function App() {
   let history = useHistory();
-  const [answer, setAnswer] = useState('Олово');
+  const [answer, setAnswer] = useState('Нептуний');
   const [isLoading, setIsLoading] = useState(false);
   
   const startHandler = () => {
-    history.push('/santaPage/question');
+    history.push('/question');
   }
 
 
@@ -37,12 +37,12 @@ function App() {
     ).then(
       () => {
         setIsLoading(false);
-        localStorage.setItem('test-4', true);
+        localStorage.setItem('test-5', true);
       }
     ).catch(error => {
       console.log(error);
     });
-    history.push('/santaPage/last');
+    history.push('/last');
   }
 
   const radioHandler = (e) => {
@@ -51,10 +51,10 @@ function App() {
 
   return (
     <Switch>
-      <Route exact path='/santaPage/question'>
+      <Route exact path='/question'>
         <Question answer={answer} onChange={radioHandler} onAnswer={answerHandler} />
       </Route>
-      <Route exact path='/santaPage/last'>
+      <Route exact path='/last'>
         <LastPage isLoading={isLoading} />
       </Route>
       <MainPage onStart={startHandler} />

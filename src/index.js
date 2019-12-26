@@ -9,9 +9,9 @@ import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 const routing = (
   <Router>
     <Route path='/'>
-      {localStorage.getItem('test-4') ? <Redirect to="/santaPage/warning" /> : <App />}
+      {localStorage.getItem('test-5') ? <Redirect to="/warning" /> : <App />}
     </Route>
-    <Route exact path='/santaPage/warning'>
+    <Route exact path='/warning'>
       <Warning />
     </Route>
   </Router>
