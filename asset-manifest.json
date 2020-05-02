@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/santaPage/static/css/main.4913cda5.chunk.css",
+    "main.js": "/santaPage/static/js/main.87038ad8.chunk.js",
+    "main.js.map": "/santaPage/static/js/main.87038ad8.chunk.js.map",
+    "runtime-main.js": "/santaPage/static/js/runtime-main.374f1b98.js",
+    "runtime-main.js.map": "/santaPage/static/js/runtime-main.374f1b98.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/santaPage/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.0c81cd6e.chunk.js": "/santaPage/static/js/2.0c81cd6e.chunk.js",
+    "static/js/2.0c81cd6e.chunk.js.map": "/santaPage/static/js/2.0c81cd6e.chunk.js.map",
+    "index.html": "/santaPage/index.html",
+    "precache-manifest.f20f420f564f02bb249bf1de11659905.js": "/santaPage/precache-manifest.f20f420f564f02bb249bf1de11659905.js",
+    "service-worker.js": "/santaPage/service-worker.js",
+    "static/css/2.17e5ed98.chunk.css.map": "/santaPage/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.4913cda5.chunk.css.map": "/santaPage/static/css/main.4913cda5.chunk.css.map",
+    "static/js/2.0c81cd6e.chunk.js.LICENSE": "/santaPage/static/js/2.0c81cd6e.chunk.js.LICENSE",
+    "static/media/santa.png": "/santaPage/static/media/santa.f544177c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.374f1b98.js",
+    "static/css/2.17e5ed98.chunk.css",
+    "static/js/2.0c81cd6e.chunk.js",
+    "static/css/main.4913cda5.chunk.css",
+    "static/js/main.87038ad8.chunk.js"
+  ]
+}
